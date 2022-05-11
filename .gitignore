@@ -13,3 +13,20 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# bazel
+bazel-big-gov-mono
+bazel-bin
+bazel-out
+bazel-testlogs
+
+# vscode
+.vscode/
+
+# IntelliJ IDEA
+.ijwb/.idea/
+.ijwb/.blaze/
+.DS_Store
+*.iml
+.idea
+genhtml
