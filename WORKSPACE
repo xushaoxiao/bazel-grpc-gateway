@@ -58,6 +58,15 @@ http_archive(
     ],
 )
 
+http_archive(
+    name = "com_github_grpc_ecosystem_grpc_gateway_v2",
+    sha256 = "d7136b4ced1d8b270144953c610635ebc6cdf017863171829ed5bf8c0e8800d7",
+    urls = [
+        "https://github.com/grpc-ecosystem/grpc-gateway/archive/v2.10.0.tar.gz",
+    ],
+    strip_prefix = "grpc-gateway-2.10.0",
+)
+
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
 go_rules_dependencies()
@@ -69,7 +78,7 @@ load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 # Use gazelle to declare Go dependencies in Bazel.
 # gazelle:repository_macro repositories.bzl%go_repositories
 
-load("//:repositories.bzl", "go_repositories")
+load("@com_github_grpc_ecosystem_grpc_gateway_v2//:repositories.bzl", "go_repositories")
 
 go_repositories()
 

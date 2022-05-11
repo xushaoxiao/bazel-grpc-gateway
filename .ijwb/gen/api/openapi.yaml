@@ -1,0 +1,642 @@
+openapi: 3.0.1
+info:
+  description: |-
+    Echo Service API consists of a single service which returns
+    a message.
+  title: Echo Service
+  version: version not set
+servers:
+- url: /
+tags:
+- name: EchoService
+paths:
+  /v1/example/echo/{id}:
+    post:
+      description: |-
+        The message posted as the id parameter will also be
+        returned.
+      operationId: EchoService_Echo
+      parameters:
+      - description: Id represents the message identifier.
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: num
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: lineNum
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: lang
+        schema:
+          type: string
+      - in: query
+        name: status.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: status.note
+        schema:
+          type: string
+      - in: query
+        name: en
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.note
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/protobufsSimpleMessage'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Echo method receives a simple message and returns it.
+      tags:
+      - EchoService
+      x-accepts: application/json
+  /v1/example/echo/{id}/{num}:
+    get:
+      description: |-
+        The message posted as the id parameter will also be
+        returned.
+      operationId: EchoService_Echo2
+      parameters:
+      - description: Id represents the message identifier.
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: num
+        required: true
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: lineNum
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: lang
+        schema:
+          type: string
+      - in: query
+        name: status.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: status.note
+        schema:
+          type: string
+      - in: query
+        name: en
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.note
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/protobufsSimpleMessage'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Echo method receives a simple message and returns it.
+      tags:
+      - EchoService
+      x-accepts: application/json
+  /v1/example/echo/{id}/{num}/{lang}:
+    get:
+      description: |-
+        The message posted as the id parameter will also be
+        returned.
+      operationId: EchoService_Echo3
+      parameters:
+      - description: Id represents the message identifier.
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: num
+        required: true
+        schema:
+          format: int64
+          type: string
+      - in: path
+        name: lang
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: lineNum
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: status.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: status.note
+        schema:
+          type: string
+      - in: query
+        name: en
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.note
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/protobufsSimpleMessage'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Echo method receives a simple message and returns it.
+      tags:
+      - EchoService
+      x-accepts: application/json
+  /v1/example/echo1/{id}/{lineNum}/{status.note}:
+    get:
+      description: |-
+        The message posted as the id parameter will also be
+        returned.
+      operationId: EchoService_Echo4
+      parameters:
+      - description: Id represents the message identifier.
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: lineNum
+        required: true
+        schema:
+          format: int64
+          type: string
+      - in: path
+        name: status.note
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: num
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: lang
+        schema:
+          type: string
+      - in: query
+        name: status.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: en
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.progress
+        schema:
+          format: int64
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/protobufsSimpleMessage'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Echo method receives a simple message and returns it.
+      tags:
+      - EchoService
+      x-accepts: application/json
+  /v1/example/echo2/{no.note}:
+    get:
+      description: |-
+        The message posted as the id parameter will also be
+        returned.
+      operationId: EchoService_Echo5
+      parameters:
+      - in: path
+        name: no.note
+        required: true
+        schema:
+          type: string
+      - description: Id represents the message identifier.
+        in: query
+        name: id
+        schema:
+          type: string
+      - in: query
+        name: num
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: lineNum
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: lang
+        schema:
+          type: string
+      - in: query
+        name: status.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: en
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.progress
+        schema:
+          format: int64
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/protobufsSimpleMessage'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Echo method receives a simple message and returns it.
+      tags:
+      - EchoService
+      x-accepts: application/json
+  /v1/example/echo_body:
+    post:
+      operationId: EchoService_EchoBody
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/protobufsSimpleMessage'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/protobufsSimpleMessage'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: EchoBody method receives a simple message and returns it.
+      tags:
+      - EchoService
+      x-codegen-request-body-name: body
+      x-contentType: application/json
+      x-accepts: application/json
+  /v1/example/echo_delete:
+    delete:
+      operationId: EchoService_EchoDelete
+      parameters:
+      - description: Id represents the message identifier.
+        in: query
+        name: id
+        schema:
+          type: string
+      - in: query
+        name: num
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: lineNum
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: lang
+        schema:
+          type: string
+      - in: query
+        name: status.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: status.note
+        schema:
+          type: string
+      - in: query
+        name: en
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.note
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/protobufsSimpleMessage'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: EchoDelete method receives a simple message and returns it.
+      tags:
+      - EchoService
+      x-accepts: application/json
+  /v1/example/echo_patch:
+    patch:
+      operationId: EchoService_EchoPatch
+      parameters:
+      - in: query
+        name: updateMask
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/protobufsDynamicMessage'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/protobufsDynamicMessageUpdate'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: EchoPatch method receives a NonStandardUpdateRequest and returns it.
+      tags:
+      - EchoService
+      x-codegen-request-body-name: body
+      x-contentType: application/json
+      x-accepts: application/json
+  /v1/example/echo_unauthorized:
+    get:
+      operationId: EchoService_EchoUnauthorized
+      parameters:
+      - description: Id represents the message identifier.
+        in: query
+        name: id
+        schema:
+          type: string
+      - in: query
+        name: num
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: lineNum
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: lang
+        schema:
+          type: string
+      - in: query
+        name: status.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: status.note
+        schema:
+          type: string
+      - in: query
+        name: en
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.progress
+        schema:
+          format: int64
+          type: string
+      - in: query
+        name: no.note
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/protobufsSimpleMessage'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: |-
+        EchoUnauthorized method receives a simple message and returns it. It must
+        always return a google.rpc.Code of `UNAUTHENTICATED` and a HTTP Status code
+        of 401.
+      tags:
+      - EchoService
+      x-accepts: application/json
+components:
+  schemas:
+    protobufAny:
+      additionalProperties:
+        type: object
+      properties:
+        '@type':
+          type: string
+      type: object
+    protobufNullValue:
+      default: NULL_VALUE
+      description: |-
+        `NullValue` is a singleton enumeration to represent the null value for the
+        `Value` type union.
+
+         The JSON representation for `NullValue` is JSON `null`.
+
+         - NULL_VALUE: Null value.
+      enum:
+      - NULL_VALUE
+      type: string
+    protobufsDynamicMessage:
+      description: |-
+        DynamicMessage represents a message which can have its structure
+        built dynamically using Struct and Values.
+      example:
+        structField: '{}'
+        valueField: '{}'
+      properties:
+        structField:
+          properties: {}
+          type: object
+        valueField:
+          properties: {}
+          type: object
+      type: object
+    protobufsDynamicMessageUpdate:
+      example:
+        body:
+          structField: '{}'
+          valueField: '{}'
+        updateMask: updateMask
+      properties:
+        body:
+          $ref: '#/components/schemas/protobufsDynamicMessage'
+        updateMask:
+          type: string
+      type: object
+    protobufsEmbedded:
+      description: Embedded represents a message embedded in SimpleMessage.
+      example:
+        note: note
+        progress: progress
+      properties:
+        progress:
+          format: int64
+          type: string
+        note:
+          type: string
+      type: object
+    protobufsSimpleMessage:
+      description: SimpleMessage represents a simple message sent to the Echo service.
+      example:
+        "no":
+          note: note
+          progress: progress
+        num: num
+        lineNum: lineNum
+        en: en
+        id: id
+        lang: lang
+        status:
+          note: note
+          progress: progress
+      properties:
+        id:
+          description: Id represents the message identifier.
+          type: string
+        num:
+          format: int64
+          type: string
+        lineNum:
+          format: int64
+          type: string
+        lang:
+          type: string
+        status:
+          $ref: '#/components/schemas/protobufsEmbedded'
+        en:
+          format: int64
+          type: string
+        "no":
+          $ref: '#/components/schemas/protobufsEmbedded'
+      type: object
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        message:
+          type: string
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+      type: object
+x-original-swagger-version: "2.0"
+
