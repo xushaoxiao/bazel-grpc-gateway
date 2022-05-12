@@ -3,12 +3,15 @@
   "info": {
     "title": "Echo Service",
     "description": "Echo Service API consists of a single service which returns\na message.",
-    "version": "version not set"
+    "version": "1.0"
   },
   "tags": [
     {
       "name": "EchoService"
     }
+  ],
+  "schemes": [
+    "https"
   ],
   "consumes": [
     "application/json"
@@ -470,7 +473,8 @@
     },
     "/v1/example/echo_delete": {
       "delete": {
-        "summary": "EchoDelete method receives a simple message and returns it.",
+        "summary": "Add a user",
+        "description": "Add a user to the server.",
         "operationId": "EchoService_EchoDelete",
         "responses": {
           "200": {
@@ -549,7 +553,7 @@
           }
         ],
         "tags": [
-          "EchoService"
+          "Users"
         ]
       }
     },
@@ -781,5 +785,9 @@
         }
       }
     }
+  },
+  "externalDocs": {
+    "description": "gRPC-gateway boilerplate repository",
+    "url": "https://github.com/johanbrandhorst/grpc-gateway-boilerplate"
   }
 }
